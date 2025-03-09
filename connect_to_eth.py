@@ -25,7 +25,7 @@ def connect_with_middleware(contract_json):
 		abi = d['abi']
 	bnb_testnet_url = "https://data-seed-prebsc-1-s1.binance.org:8545"
 	w3 = Web3(HTTPProvider(bnb_testnet_url))  
-	w3.middleware_stack.inject(ExtraDataToPOAMiddleware, layer=0)
+	w3.middleware_onion.inject(ExtraDataToPOAMiddleware, layer=0)
 	contract = w3.eth.contract(address=address, abi=abi)
 
 	return w3, contract
