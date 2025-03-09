@@ -38,7 +38,7 @@ def connect_to_bnb_testnet():
 	# create a contract object. Read more on the docs pages at https://web3py.readthedocs.io/en/stable/middleware.html
 	# and https://web3py.readthedocs.io/en/stable/web3.contract.html
 	contract = 0
-	def connect_with_middleware(address, abi):
+def connect_with_middleware(address, abi):
 	bnb_testnet_url = "https://data-seed-prebsc-1-s1.binance.org:8545"
 	w3 = Web3(HTTPProvider(bnb_testnet_url))  
 	w3.middleware_stack.inject(ExtraDataToPOAMiddleware, layer=0)
