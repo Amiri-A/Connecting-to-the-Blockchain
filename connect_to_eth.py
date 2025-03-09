@@ -28,9 +28,9 @@ def connect_with_middleware(contract_json):
 	# The first section will be the same as "connect_to_eth()" but with a BNB url
 	#w3 = 0
 def connect_to_bnb_testnet():
-    bnb_testnet_url = "https://data-seed-prebsc-1-s1.binance.org:8545"  
-    w3 = Web3(HTTPProvider(bnb_testnet_url)) 
-    return w3
+	bnb_testnet_url = "https://data-seed-prebsc-1-s1.binance.org:8545"  
+	w3 = Web3(HTTPProvider(bnb_testnet_url)) 
+	return w3
 
 
 
@@ -39,12 +39,12 @@ def connect_to_bnb_testnet():
 	# and https://web3py.readthedocs.io/en/stable/web3.contract.html
 	contract = 0
 	def connect_with_middleware(address, abi):
-    bnb_testnet_url = "https://data-seed-prebsc-1-s1.binance.org:8545"
-    w3 = Web3(HTTPProvider(bnb_testnet_url))  
-    w3.middleware_stack.inject(ExtraDataToPOAMiddleware, layer=0)
-    contract = w3.eth.contract(address=address, abi=abi)
+	bnb_testnet_url = "https://data-seed-prebsc-1-s1.binance.org:8545"
+	w3 = Web3(HTTPProvider(bnb_testnet_url))  
+	w3.middleware_stack.inject(ExtraDataToPOAMiddleware, layer=0)
+	contract = w3.eth.contract(address=address, abi=abi)
 
-    return w3, contract
+	return w3, contract
 
 
 
